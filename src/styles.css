@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@100..900&family=Roboto&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+.kaushan {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #f38181;
+    border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #f38181;
+}

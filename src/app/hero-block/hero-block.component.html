@@ -1,0 +1,44 @@
+<section>
+    <div class="relative z-10 bg-gradientPattern w-full">
+        <div class="container mx-auto min-h-screen flex flex-col justify-between items-center py-7 w-full">
+            <the-header class="w-full" />
+
+            <div class="text-center">
+                <h2 class="text-7xl kaushan pb-10">{{ subTitle }}</h2>
+                <h1
+                    class="text-9xl font-bold uppercase"
+                    [innerHTML]="title"
+                ></h1>
+            </div>
+
+            <div class="flex flex-col gap-10 items-center">
+                <span class="inline-flex bg-white h-1 w-16"></span>
+
+                <button
+                    (click)="handleClick()"
+                    class="py-2.5 px-7 text-sm font-bold uppercase border-2 border-white hover:bg-white hover:text-black duration-300"
+                >
+                    {{ btnText }}
+                </button>
+            </div>
+
+            <ul class="flex gap-8 justify-between w-full">
+                @for (tab of tabs; track tab; let idx = $index) {
+                    <li
+                        class="text-2xl font-bold opacity-70 pt-6 border-t-4 grow border-white/50"
+                    >
+                        0{{ idx + 1 }}
+                        <span class="text-lg uppercase">{{ tab }}</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <img
+        class="absolute z-0 inset-0 w-full h-full object-cover"
+        src="/images/bg/bg.jpg"
+        alt="Background image"
+        crossorigin
+    />
+</section>
