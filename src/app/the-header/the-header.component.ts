@@ -1,5 +1,5 @@
 import { Component, inject } from "@angular/core";
-import { IMenuItem } from "../imenu-item";
+import { IMenuItem } from "../menu.types";
 import { ScrollToService } from "../scroll-to.service";
 
 @Component({

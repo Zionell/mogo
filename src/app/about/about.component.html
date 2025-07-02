@@ -5,48 +5,23 @@
         [supTitle]="supTitle"
     />
 
-    <div class="carts">
-        <div class="cart">
+    <div class="grid grid-cols-3 gap-8">
+        <div class="cart" *ngFor="let card of aboutCards">
             <div class="cart_item">
                 <div class="cart_img">
                     <img
-                        src="/public/images/about/1.jpg"
-                        alt=""
-                    >
+                        [ngSrc]="card.img"
+                        [alt]="card.text"
+                        class="w-full h-[15.5rem]"
+                        width="380"
+                        height="250"
+                    />
                 </div>
-                <div class="item__text"><i class="fas fa-user-friends"></i>
-                    <p>super team</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="cart">
-            <div class="cart_item">
-                <div class="cart_img">
-                    <img
-                        src="/public/images/about/2.jpg"
-                        alt=""
-                    >
-                </div>
-                <div class="item__text"><i class="fas fa-user-friends"></i>
-                    <p>super team</p>
+                <div class="hidden">
+                    <i [class]="card.icon"></i>
+                    <p>{{ card.text }}</p>
                 </div>
             </div>
         </div>
-
-        <div class="cart">
-            <div class="cart_item">
-                <div class="cart_img">
-                    <img
-                        src="/public/images/about/3.jpg"
-                        alt=""
-                    >
-                </div>
-                <div class="item__text"><i class="fas fa-user-friends"></i>
-                    <p>super team</p>
-                </div>
-            </div>
-        </div>
-
     </div>
 </wrapper-section>

@@ -5,61 +5,28 @@
         [description]="description"
     />
 
-    <div id="contact" class="carts">
-
-        <div class="cart">
+    <div id="contact" class="grid grid-cols-3 gap-8">
+        <div class="cart" *ngFor="let card of teamCards">
             <div class="cart_item">
                 <div class="cart_img">
-                    <img src="../public/images/authors/1.png" alt="">
+                    <img
+                        [ngSrc]="card.img"
+                        [alt]="card.name"
+                        width="380"
+                        height="470"
+                        class="w-full h-[30rem]"
+                    />
                 </div>
-                <div class="item__text team__social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                <!--                <div class="item__text team__social">-->
+                <!--                    <a *ngFor="let social of card.socials" [href]="social.link"><i [class]="social.icon"></i></a>-->
+                <!--                </div>-->
             </div>
-            <div class="cart_team">
-                <h2>Matthew Dix</h2>
-                <p>Graphic Design</p>
+            <div class="text-center">
+                <h3 class="text-sm uppercase mt-8 mb-3.5">{{ card.name }}</h3>
+                <div class="roboto text-sm text-gray-400 font-light">
+                    {{ card.role }}
+                </div>
             </div>
         </div>
-
-        <div class="cart">
-            <div class="cart_item">
-                <div class="cart_img">
-                    <img src="../public/images/authors/2.png" alt="">
-                </div>
-                <div class="item__text team__social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="cart_team">
-                <h2>Christopher Campbell</h2>
-                <p>Branding/UX design</p>
-            </div>
-        </div>
-
-        <div class="cart">
-            <div class="cart_item">
-                <div class="cart_img">
-                    <img src="../public/images/authors/3.png" alt="">
-                </div>
-                <div class="item__text team__social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="cart_team">
-                <h2>Michael Fertig </h2>
-                <p>Developer</p>
-            </div>
-        </div>
-
     </div>
 </wrapper-section>

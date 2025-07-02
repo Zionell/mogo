@@ -1,11 +1,14 @@
-<footer class="bg-zinc-200">
+<footer class="bg-gray-100 text-black pt-[4.5rem]">
     <div class="container mx-auto">
-        <div class="footer">
+        <div class="flex gap-10">
             <div class="footer-info">
                 <h3>MoGo</h3>
-                <p class="info_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <p class="info_text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
                 <p class="followers"><span>15k</span> followers</p>
                 <div class="footer_following">
                     <span>Follow Us:</span>
@@ -19,61 +22,65 @@
                     <a href="#"><i class="fab f fa-tumblr"></i></a>
                 </div>
                 <form action="#">
-                    <input type="email" placeholder="Your Email...">
+                    <input type="email" placeholder="Your Email..." />
                     <button>Subscribe</button>
                 </form>
             </div>
-            <div class="wrapper_for_rightSide">
-                <div class="footer-blogs">
-                    <h4>blogs</h4>
-                    <div class="footer_blog">
-                        <div class="img"><img src="../public/images/blogs/1.png" alt=""></div>
-                        <div class="title">
-                            <a href="#">Lorem ipsum dolor sit amet,consectetur adipiscing</a>
-                            <p>Jan 9, 2016</p>
-                        </div>
-                    </div>
 
-                    <div class="footer_blog">
-                        <div class="img"><img src="../public/images/blogs/2.png" alt=""></div>
-                        <div class="title">
-                            <a href="#">Consectetur adipiscing elit,sed do eiusmod tempor</a>
-                            <p>Jan 9, 2016</p>
-                        </div>
-                    </div>
+            <div class="flex gap-20 shrink-0">
+                <div class="max-w-[21rem]">
+                    <h3 class="text-sm uppercase pb-10">blogs</h3>
 
-                    <div class="footer_blog">
-                        <div class="img"><img src="../public/images/blogs/3.png" alt=""></div>
-                        <div class="title">
-                            <a href="#">sed do eiusmod temporincididunt ut labore</a>
-                            <p>Jan 9, 2016</p>
-                        </div>
-                    </div>
+                    <div class="flex flex-col gap-8">
+                        <a
+                            [href]="blog.link"
+                            class="flex gap-5 items-center"
+                            *ngFor="let blog of footerBlogs"
+                        >
+                            <img
+                                [ngSrc]="blog.img"
+                                [alt]="blog.title"
+                                class="shrink-0 w-[7.5rem] h-[5rem]"
+                                width="120"
+                                height="80"
+                            />
 
+                            <div class="flex flex-col gap-2.5">
+                                <h4 class="text-xs">{{ blog.title }}</h4>
+                                <div class="roboto text-xs text-gray-400">
+                                    {{ blog.date }}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
 
-                <div class="footer-inst">
-                    <h3>instagram</h3>
-                    <div class="pics">
-                        <a href="#"><img src="../public/images/instagram/1.png" alt=""></a>
-                        <a href="#"><img src="../public/images/instagram/2.png" alt=""></a>
-                        <a href="#"><img src="../public/images/instagram/3.png" alt=""></a>
-                        <a href="#"><img src="../public/images/instagram/4.png" alt=""></a>
-                        <a href="#"><img src="../public/images/instagram/5.png" alt=""></a>
-                        <a href="#"><img src="../public/images/instagram/6.png" alt=""></a>
-                        <a href="#"><img src="../public/images/instagram/7.png" alt=""></a>
-                        <a href="#"><img src="../public/images/instagram/8.png" alt=""></a>
-                        <a href="#"><img src="../public/images/instagram/9.png" alt=""></a>
+                <div>
+                    <h3 class="text-sm uppercase pb-10">instagram</h3>
+
+                    <div class="grid grid-cols-3 gap-0.5">
+                        <a *ngFor="let img of instGallery" href="#">
+                            <img
+                                [ngSrc]="img"
+                                alt="Instagram image"
+                                class="w-[5rem] h-[5rem]"
+                                width="100"
+                                height="100"
+                            />
+                        </a>
                     </div>
-                    <a class="more" href="#">View more photos</a>
+                    <a class="flex text-xs font-light pt-5" href="#"
+                        >View more photos</a
+                    >
                 </div>
             </div>
-
-
         </div>
-        <div class="copyright">
-            © 2016 MoGo free PSD template by
-            <a href="">Laaqiq</a>
+
+        <hr class="mt-16" />
+
+        <div class="text-center py-10">
+            © {{ currentYear }} MoGo free PSD template by
+            <a class="text-red-400" href="#">Laaqiq</a>
         </div>
     </div>
 </footer>

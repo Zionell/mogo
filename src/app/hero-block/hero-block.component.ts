@@ -1,12 +1,13 @@
 import { Component, inject } from "@angular/core";
 import { TheHeaderComponent } from "../the-header/the-header.component";
 import { ScrollToService } from "../scroll-to.service";
+import { NgOptimizedImage } from "@angular/common";
 
 @Component({
     standalone: true,
     selector: "hero-block",
     templateUrl: "./hero-block.component.html",
-    imports: [TheHeaderComponent],
+    imports: [TheHeaderComponent, NgOptimizedImage],
     providers: [ScrollToService],
 })
 export class HeroBlockComponent {

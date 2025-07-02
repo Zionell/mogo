@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { TheHeaderComponent } from "./the-header/the-header.component";
 import { HeroBlockComponent } from "./hero-block/hero-block.component";
 import { AboutComponent } from "./about/about.component";
 import { ServiceComponent } from "./service/service.component";
@@ -18,7 +17,6 @@ import { TheMapComponent } from "./the-map/the-map.component";
     standalone: true,
     selector: "app-root",
     imports: [
-        TheHeaderComponent,
         HeroBlockComponent,
         AboutComponent,
         ServiceComponent,
@@ -30,7 +28,6 @@ import { TheMapComponent } from "./the-map/the-map.component";
         CountsComponent,
         ReviewsComponent,
         TheFooterComponent,
-        NgOptimizedImage,
         TheMapComponent,
     ],
     templateUrl: "app.component.html",

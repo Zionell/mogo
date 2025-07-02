@@ -1,74 +1,42 @@
-<wrapper-section [id]="id">
-    <title-section
-        [title]="title"
-        [supTitle]="supTitle"
-        [description]="description"
-    />
-
-    <div class="works">
-        <div class="works-pics">
-            <div class="works_pic">
-                <img class="bg" src="../public/images/works/1.png" alt="1">
-                <div class="hover"><a href="#"><img src="../public/images/works/PICTURE.png" alt="">
-                    <h3>creatively designed</h3>
-                    <p>Lorem ipsum dolor sit</p>
-                </a>
-                </div>
-            </div>
-            <div class="works_pic">
-                <img class="bg" src="../public/images/works/2.png" alt="2">
-                <div class="hover"><a href="#"><img src="../public/images/works/PICTURE.png" alt="">
-                    <h3>creatively designed</h3>
-                    <p>Lorem ipsum dolor sit</p>
-                </a>
-                </div>
-            </div>
-        </div>
-        <div class="works-pics">
-            <div class="works_pic">
-                <img class="bg" src="../public/images/works/3.png" alt="4">
-                <div class="hover"><a href="#"><img src="../public/images/works/PICTURE.png" alt="">
-                    <h3>creatively designed</h3>
-                    <p>Lorem ipsum dolor sit</p>
-                </a>
-                </div>
-            </div>
-            <div class="works_pic">
-                <img class="bg" src="../public/images/works/4.png" alt="5">
-                <div class="hover"><a href="#"><img src="../public/images/works/PICTURE.png" alt="">
-                    <h3>creatively designed</h3>
-                    <p>Lorem ipsum dolor sit</p>
-                </a>
-                </div>
-            </div>
-        </div>
-        <div class="works-pics">
-            <div class="works_pic">
-                <img class="bg" src="../public/images/works/5.png" alt="3">
-                <div class="hover"><a href="#"><img src="../public/images/works/PICTURE.png" alt="">
-                    <h3>creatively designed</h3>
-                    <p>Lorem ipsum dolor sit</p>
-                </a>
-                </div>
-            </div>
-        </div>
-        <div class="works-pics">
-            <div class="works_pic">
-                <img class="bg" src="../public/images/works/6.png" alt="6">
-                <div class="hover"><a href="#"><img src="../public/images/works/PICTURE.png" alt="">
-                    <h3>creatively designed</h3>
-                    <p>Lorem ipsum dolor sit</p>
-                </a>
-                </div>
-            </div>
-            <div class="works_pic">
-                <img class="bg" src="../public/images/works/7.png" alt="7">
-                <div class="hover"><a href="#"><img src="../public/images/works/PICTURE.png" alt="">
-                    <h3>creatively designed</h3>
-                    <p>Lorem ipsum dolor sit</p>
-                </a>
-                </div>
-            </div>
-        </div>
+<section [id]="id">
+    <div class="container text-black mx-auto pt-24">
+        <title-section
+            [title]="title"
+            [supTitle]="supTitle"
+            [description]="description"
+        />
     </div>
-</wrapper-section>
+
+    <div class="grid grid-cols-4">
+        <a
+            [href]="card.link"
+            [ngClass]="{ 'row-start-1 row-span-3 col-start-3': card?.isLarge }"
+            class="relative group"
+            *ngFor="let card of worksCards"
+        >
+            <img
+                class="bg"
+                [ngSrc]="card.image"
+                [alt]="card.title"
+                width="480"
+                height="380"
+            />
+
+            <div
+                class="absolute inset-0 bg-gradientPattern flex flex-col items-center justify-center duration-300 opacity-0 group-hover:opacity-100"
+            >
+                <img
+                    [ngSrc]="'/images/works/PICTURE.png'"
+                    alt="hover image"
+                    width="30"
+                    height="30"
+                    class="w-8 h-8"
+                />
+                <h3 class="text-sm uppercase mt-5 mb-2">{{ card.title }}</h3>
+                <div class="roboto text-sm font-light">
+                    {{ card.description }}
+                </div>
+            </div>
+        </a>
+    </div>
+</section>

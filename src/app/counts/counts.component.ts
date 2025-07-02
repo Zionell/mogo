@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IMenuItem } from "../imenu-item";
+import { IMenuItem } from "../menu.types";
 
 @Component({
     standalone: true,

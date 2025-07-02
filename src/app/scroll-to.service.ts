@@ -13,18 +13,11 @@ export class ScrollToService {
             const position =
                 target.getBoundingClientRect().top + window.pageYOffset;
 
-            // if (force) {
             window.scroll({
                 top: position - offset,
                 left: 0,
                 behavior: "smooth",
             });
-            // } else {
-            // gsap.to(window, {
-            //     duration: 0.5,
-            //     scrollTo: { y: position, offsetY: offset },
-            // });
-            // }
         }
     }
 }
