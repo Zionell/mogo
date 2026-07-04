@@ -8,6 +8,10 @@
     font-family: "Montserrat", sans-serif;
 }
 
+body {
+    background: #fff;
+}
+
 .kaushan {
     font-family: "Kaushan Script", cursive;
     font-weight: 400;

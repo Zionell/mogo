@@ -1,50 +1,44 @@
-<section class="section section-clients">
-    <div class="container">
-        <div class="section-header">
-            <h4>Happy Clients</h4>
-            <h3>What people say</h3>
-        </div>
+<section class="relative">
+    <img
+        class="absolute z-0 inset-0 w-full h-full object-cover"
+        ngSrc="/images/bg/bg-clients.png"
+        alt="Background image"
+        fill
+    />
+    <div class="absolute z-0 inset-0 bg-white/90"></div>
 
-        <div class="clients">
-            <div class="client">
-                <img src="../public/images/clients/1.png" alt="" />
-                <h3>Matthew Dix</h3>
-                <h4>Graphic Design</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim.
-                </p>
-            </div>
-            <div class="client">
-                <img src="../public/images/clients/2.png" alt="" />
-                <h3>Nick Karvounis</h3>
-                <h4>Graphic Design</h4>
-                <p>
-                    Sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam
-                </p>
-            </div>
-            <div class="client">
-                <img src="../public/images/clients/3.png" alt="" />
-                <h3>Jaelynn Castillo</h3>
-                <h4>Graphic Design</h4>
-                <p>
-                    Ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam
-                </p>
-            </div>
-            <div class="client">
-                <img src="../public/images/clients/4.png" alt="" />
-                <h3>Mike Petrucci</h3>
-                <h4>Graphic Design</h4>
-                <p>
-                    Dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                    ad minim.
-                </p>
+    <div class="relative z-10 container text-black mx-auto pt-24 pb-28">
+        <title-section [title]="title" [supTitle]="supTitle" />
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-11 gap-y-10 lg:gap-y-16">
+            <div
+                class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 sm:gap-8"
+                *ngFor="let client of clients"
+            >
+                <img
+                    [ngSrc]="client.img"
+                    [alt]="client.name"
+                    class="shrink-0 w-28 h-28 rounded-full"
+                    width="110"
+                    height="110"
+                />
+
+                <div>
+                    <h3 class="text-sm uppercase">{{ client.name }}</h3>
+                    <div
+                        class="roboto text-sm font-light italic text-gray-400 mt-2"
+                    >
+                        {{ client.role }}
+                    </div>
+
+                    <span
+                        class="block bg-red-400 h-0.5 w-14 my-4 mx-auto sm:mx-0"
+                    ></span>
+
+                    <p class="roboto text-sm text-gray-400">
+                        {{ client.text }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>

@@ -6,11 +6,30 @@
         fill
     />
     <div
-        class="relative z-10 h-full container mx-auto flex flex-col items-center justify-center gap-5"
+        class="relative z-10 h-full container mx-auto flex items-center justify-center"
     >
-        <img ngSrc="/images/PIN_2.png" alt="marker" height="26" width="20" />
-        <h3 class="text-red-400 text-2xl font-bold uppercase">Open map</h3>
+        <a
+            [href]="mapLink"
+            target="_blank"
+            rel="noopener"
+            class="group flex flex-col items-center gap-5"
+        >
+            <img
+                ngSrc="/images/PIN_2.png"
+                alt="marker"
+                height="26"
+                width="20"
+                class="duration-300 group-hover:-translate-y-2"
+            />
+            <h3
+                class="text-red-400 text-2xl font-bold uppercase duration-300 group-hover:tracking-wider"
+            >
+                Open map
+            </h3>
 
-        <span class="bg-red-400 h-1 w-16"></span>
+            <span
+                class="bg-red-400 h-1 w-16 duration-300 group-hover:w-32"
+            ></span>
+        </a>
     </div>
 </section>

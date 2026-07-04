@@ -7,10 +7,12 @@
         />
     </div>
 
-    <div class="grid grid-cols-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
         <a
             [href]="card.link"
-            [ngClass]="{ 'row-start-1 row-span-3 col-start-3': card?.isLarge }"
+            [ngClass]="{
+                'md:row-start-1 md:row-span-3 md:col-start-3': card?.isLarge,
+            }"
             class="relative group"
             *ngFor="let card of worksCards"
         >
@@ -19,7 +21,7 @@
                 [ngSrc]="card.image"
                 [alt]="card.title"
                 width="480"
-                height="380"
+                [height]="card.isLarge ? 780 : 380"
             />
 
             <div

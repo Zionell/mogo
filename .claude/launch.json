@@ -1,0 +1,12 @@
+{
+    "version": "0.0.1",
+    "configurations": [
+        {
+            "name": "mogo-dev",
+            "runtimeExecutable": "sh",
+            "runtimeArgs": ["-c", "npm start -- --port $PORT"],
+            "port": 4200,
+            "autoPort": true
+        }
+    ]
+}

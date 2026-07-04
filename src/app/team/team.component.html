@@ -5,24 +5,29 @@
         [description]="description"
     />
 
-    <div id="contact" class="grid grid-cols-3 gap-8">
-        <div class="cart" *ngFor="let card of teamCards">
-            <div class="cart_item">
-                <div class="cart_img">
+    <div
+        id="contact"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+        <div class="group" *ngFor="let card of teamCards">
+            <div class="relative">
+                <div class="">
                     <img
                         [ngSrc]="card.img"
                         [alt]="card.name"
                         width="380"
                         height="470"
-                        class="w-full h-[30rem]"
+                        class="w-full h-[30rem] object-cover"
                     />
                 </div>
-                <!--                <div class="item__text team__social">-->
-                <!--                    <a *ngFor="let social of card.socials" [href]="social.link"><i [class]="social.icon"></i></a>-->
-                <!--                </div>-->
+                <div
+                    class="absolute inset-0 bg-gradientPattern flex items-center justify-center gap-4 text-white opacity-0 group-hover:opacity-100 duration-300"
+                >
+                    <a *ngFor="let social of card.socials" [href]="social.link"><i [class]="social.icon"></i></a>
+                </div>
             </div>
             <div class="text-center">
-                <h3 class="text-sm uppercase mt-8 mb-3.5">{{ card.name }}</h3>
+                <h3 class="text-sm uppercase font-medium mt-8 mb-3.5">{{ card.name }}</h3>
                 <div class="roboto text-sm text-gray-400 font-light">
                     {{ card.role }}
                 </div>

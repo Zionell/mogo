@@ -1,36 +1,59 @@
-<div class="reviews">
-    <div class="container">
-        <div class="review">
-            <div class="rewiew_img">
-                <img class="rew_img" src="../public/images/SPEECH.png" alt="" />
-            </div>
+<div class="bg-gray-100 text-black py-16 md:py-28">
+    <div class="container mx-auto relative flex items-center md:px-28">
+        <button
+            (click)="slidePrev()"
+            class="absolute left-6 z-10 text-gray-400 text-3xl hover:text-red-400 duration-300 hidden md:block"
+            aria-label="Previous review"
+        >
+            <i class="fas fa-chevron-left"></i>
+        </button>
 
-            <div class="reviews-content">
-                <p class="reviews_text">
-                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation.”
-                </p>
-                <div class="reviews_author">Jon Doe</div>
-            </div>
-        </div>
+        <swiper-container
+            #swiperEl
+            slides-per-view="1"
+            loop="true"
+            class="w-full max-w-4xl mx-auto"
+        >
+            <swiper-slide *ngFor="let review of slides">
+                <div
+                    class="flex flex-col sm:flex-row gap-8 md:gap-12 items-center sm:items-start"
+                >
+                    <div
+                        class="shrink-0 bg-teal-200 w-24 h-24 md:w-28 md:h-28 flex items-center justify-center"
+                    >
+                        <img
+                            ngSrc="/images/SPEECH.png"
+                            alt="Quote icon"
+                            width="60"
+                            height="60"
+                        />
+                    </div>
+
+                    <div>
+                        <p
+                            class="roboto text-lg md:text-2xl font-light italic text-gray-400"
+                        >
+                            {{ review.quote }}
+                        </p>
+                        <div
+                            class="kaushan text-xl mt-5 flex items-center gap-3"
+                        >
+                            <span
+                                class="inline-flex bg-red-400 h-0.5 w-14"
+                            ></span>
+                            {{ review.author }}
+                        </div>
+                    </div>
+                </div>
+            </swiper-slide>
+        </swiper-container>
+
+        <button
+            (click)="slideNext()"
+            class="absolute right-6 z-10 text-gray-400 text-3xl hover:text-red-400 duration-300 hidden md:block"
+            aria-label="Next review"
+        >
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </div>
 </div>
-
-<!--<div class="reviews rews2">-->
-<!--    <div class="container">-->
-<!--        <div class="review rew2">-->
-<!--            <div class="rewiew_img2">-->
-<!--                <img class="rew_img2" src="../public/images/Layer_36.png" alt="">-->
-<!--            </div>-->
-
-<!--            <div class="reviews-content rew-con2">-->
-<!--                <p class="reviews_text rew_text2">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do-->
-<!--                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud-->
-<!--                    exercitation.”</p>-->
-<!--                <p class="reviews_author rew_aut2">Joshua Earle</p>-->
-<!--            </div>-->
-
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->

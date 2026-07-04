@@ -1,0 +1,54 @@
+<wrapper-section>
+    <title-section
+        [title]="title"
+        [supTitle]="supTitle"
+        [description]="description"
+    />
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <img
+            ngSrc="/images/service/service.jpg"
+            alt="What we do"
+            class="w-full"
+            width="570"
+            height="380"
+        />
+
+        <div class="flex flex-col gap-2.5">
+            <div
+                class="border border-gray-200"
+                *ngFor="let item of items; let idx = index"
+            >
+                <button
+                    (click)="toggle(idx)"
+                    class="w-full flex items-center gap-4 p-4 uppercase text-sm"
+                >
+                    <img
+                        [ngSrc]="item.icon"
+                        [alt]="item.title"
+                        class="w-8 h-8"
+                        width="32"
+                        height="32"
+                    />
+                    {{ item.title }}
+                    <i
+                        class="fas fa-chevron-down ml-auto text-teal-300 duration-300"
+                        [class.rotate-180]="openedIndex === idx"
+                    ></i>
+                </button>
+
+                <div
+                    #panel
+                    class="overflow-hidden"
+                    [style.height]="idx === initialOpenedIndex ? 'auto' : '0px'"
+                >
+                    <div
+                        class="border-t border-gray-200 p-4 max-h-40 overflow-y-auto roboto text-sm font-light italic text-gray-400"
+                    >
+                        {{ item.text }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</wrapper-section>

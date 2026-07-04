@@ -1,7 +1,7 @@
 <wrapper-section [id]="id">
-    <title-section [title]="title" [supTitle]="supTitle" />
+    <title-section [title]="title" [supTitle]="supTitle"/>
 
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="flex flex-col" *ngFor="let blog of blogs">
             <div class="relative">
                 <div
@@ -24,16 +24,16 @@
                 {{ blog.description }}
             </div>
 
-            <hr class="my-5" />
+            <hr class="my-5"/>
 
-            <div class="flex gap-6 text-teal-200 text-sm mt-auto">
-                <span class="flex items-center gap-2"
-                    ><i class="fas fa-eye"></i> {{ blog.views }}</span
-                >
-                <span class="flex items-center gap-2"
-                    ><i class="fas fa-comment-dots"></i>
-                    {{ blog.comments }}</span
-                >
+            <div class="flex gap-6 text-sm mt-auto">
+                <span class="flex items-center gap-2 text-teal-500">
+                    <i class="fas fa-eye"></i> {{ blog.views }}
+                </span>
+                <span class="flex items-center gap-2 text-teal-500">
+                    <i class="fas fa-comment-dots"></i>
+                    {{ blog.comments }}
+                </span>
             </div>
         </div>
     </div>

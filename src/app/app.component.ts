@@ -10,8 +10,9 @@ import { ClientsComponent } from "./clients/clients.component";
 import { CountsComponent } from "./counts/counts.component";
 import { ReviewsComponent } from "./reviews/reviews.component";
 import { TheFooterComponent } from "./the-footer/the-footer.component";
-import { NgOptimizedImage } from "@angular/common";
 import { TheMapComponent } from "./the-map/the-map.component";
+import { WhatWeDoComponent } from "./what-we-do/what-we-do.component";
+import { BannerComponent } from "./banner/banner.component";
 
 @Component({
     standalone: true,
@@ -29,6 +30,8 @@ import { TheMapComponent } from "./the-map/the-map.component";
         ReviewsComponent,
         TheFooterComponent,
         TheMapComponent,
+        WhatWeDoComponent,
+        BannerComponent
     ],
     templateUrl: "app.component.html",
 })

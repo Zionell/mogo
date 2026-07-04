@@ -1,7 +1,11 @@
-<header class="container mx-auto w-full flex items-center z-20 justify-between">
+<header
+    class="container mx-auto w-full flex flex-col gap-4 sm:flex-row items-center z-20 justify-between"
+>
     <div class="text-3xl font-bold select-none">{{ logo }}</div>
 
-    <nav class="flex items-center gap-12 uppercase">
+    <nav
+        class="flex flex-wrap items-center justify-center gap-5 lg:gap-12 uppercase"
+    >
         @for (menu of menuItems; track menu.value) {
             <button
                 class="text-sm hover:text-[#fce38a] duration-300"
